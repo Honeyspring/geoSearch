@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HS GEO SEARCH</title>
+<meta charset="UTF-8">
+<meta name="description" content="HS GEO SEARCH allows user to saerch for specific places,view map amrker of the place and get information such as weather conditions">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href ="css/main.css" >
+</head>
+<body>
+
+<div class="header">
+        <img src="images/icons/Hs.png" alt="HS logo" id="logo">
+  <h1>HS GEO SEARCH</h1>
+  <p>your quick access to weather info. </p>
+</div>
+
+<div class="navbar">
+        <a href="index.html" class="active" >HOME</a>
+  <a href="about.html">ABOUT</a>
+  
+  <div class="right">
+        <form  id="city-form">
+      <input type="text" placeholder="search for a place" name="searchText" id="city" required > 
+      <button class="search "  type="submit" name="search"> SEARCH
+    </button>
+    </form>
+</div> 
+</div>
+
+<div class="row">
+       
+  <div class="side">
+    <h2>Weather Now</h2>
+    <h5>Get Weather Info:</h5>
+    <p id="pressureResult"></p>
+    <p id="windResult"></p>
+    <p id="humidityResult"></p>
+    <p id="celsciusResult"></p>
+    <p id="fahrenheitResult"></p>
+    <p id="weatherReport" ></p>
+    <div class="control">
+            <button class="button " id="celscius" >TEMPERATURE IN CELSCIUS</button>
+            <button class="button" id="fahrenheit" >TEMPERATURE IN FARRENHEIT</button>
+            <button class="button " id="wind">WIND SPEED</button>
+            <button class="button " id="humidity">HUMIDITY</button>
+            <button class="button " id="pressure">PRESSURE</button>
+            <button class="button ">SHARE</button>
+      </div>      
+   
+      <br>
+    
+   
+            <div class="card">
+                    <div class="dateHeader">
+                      <h1 id="day">2</h1>
+                    </div>
+                  
+                    <div class="dateContainer">
+                      <p id="year"> NOV,2019</p>
+                    </div>
+            </div>
+       
+   
+  </div><!--side-->
+
+  <div class="main">
+    <h2 id="locationHeader" >Lagos,Nigeria</h2>
+    <h5 id="date">Weather for, NOV 1st, 2019</h5>
+    <button class="button " id="guideButton"> Quick Guide</button>
+   
+    <div class="guide card" id="guideSection" >
+            <div class="dateHeader">
+              <h1 id="day">Quick Guide</h1>
+            </div>
+          
+            <div class="">
+              <p >To search for a place on the map scroll to the search box just above the map and input the name of the place. </p>
+              <p>Some city may appear in various country so its adviceable to put country after city for best result</p>
+              <p>in order to check for weather report scroll to to top navigation bar where 'Home','ABOUT' and a search button appears<br/>
+            input your text in the text area just beside the search button and click 'search'<br/>
+            the weather reports appears on the main page ,right on top and above the buttons :'temperature in Cescuis','wind speed',etc.</p>
+            <p>you can convert temperature to celscuis or fahrenheit by clicking either buttons with the label on it,this would only display result when you have entered a location in the search box on the top navigation bar, the wind speed,humidity nd pessure works the same way.</p>
+            </div>
+            <button class="button " id="cancelButton"> Close Guide</button>
+    </div>
+    <div class="map">
+            <img width="600" src="https://www.mapquestapi.com/staticmap/v4/getplacemap?key=rbAO4YLaxBjK5xUHWpzxuAMXVe6wrMqj&location=Lagos&size=600,300&type=map&zoom=13&imagetype=png&scalebar=false&showicon=green-1" alt="Map of Lagos"name="map">
+    </div>
+    <p id="pressureResult"></p>
+    <p id="windResult"></p>
+    <p id="humidityResult"></p>
+    <p id="celsciusResult"></p>
+    <p id="fahrenheitResult"></p>
+    <p id="weatherReport" ></p>
+    
+    
+    <h2>MAP</h2>
+    
+    <input id="pac-input" class="controls" type="text" placeholder="Search for a place ">
+    <div id="map"></div>
+ <br>
+    </div>
+   </div>
+
+<div class="footer">
+ 
+  <div class="container">
+    <div class="row">
+            <div class="">
+                    <h4>CONTACT</h4>
+                    <p>7,Obaonimole street singer sango ota,Ogun state,Nigeria.
+                    <br/>ogunsola.irene@gmail.com
+                    <br/>+ 2348092916689
+                    <br/>+ 2349013267496</p>
+                  </div>
+      <div class="">
+      
+      <p><a class="btn " href="https://www.facebook.com/ogunsola.oyindamola" role="button"> <img src="images/icons/facebook1.png"></a>
+          <a class="btn " href="mailto:ogunsola.irene@gmail.com" role="button">  <img src="images/icons/email.png"></a>
+          <a class="btn " href="https://wa.me/+2348092916689" role="button">  <img src="images/icons/whatsapp.png"></a>
+          <a class="btn " href="tel:+2348092916689" role="button">  <img src="images/icons/phone.png"></a></p>
+    </div>
+    
+  </div><!--row-->
+  <div class="footer-copyright text-center">© 2019 Copyright: HSworld.com</div>
+
+      
+</div>
+</div>
+<script src="js/script.js"></script>
+
+</body>
+
+
+</html>

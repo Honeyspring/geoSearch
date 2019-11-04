@@ -1,0 +1,268 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif ;
+  margin: 0;
+  
+}
+h1,h2,h3,h4,h5,h6{
+    color:#56450a;
+}
+h1{
+    text-shadow: 5px 3px grey;
+}
+/* Style the header */
+.header {
+  padding: 1em;
+  text-align: center;
+  background: #0f1715;
+  color: white;
+}
+#logo{
+    
+    mix-blend-mode:screen;
+    
+}
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+ 
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display:block ;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.right{
+    display: flex;
+    justify-content: flex-end;
+    margin:0 1em;
+   
+}
+
+ input{
+    border: 2px solid rgba(76, 74, 12, 0.8);
+    border-radius:1em;
+    margin: 4px 2px;
+    padding: 14px 20px;
+    width:400px;
+ 
+    
+}
+.right .search{
+    border-radius:1em;
+    padding: 15px  32px;
+    margin: 4px 7px;
+    text-align: center;
+    text-decoration: none;
+    color:#fff;
+    background: #56450a;;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#56450a;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#56450a;
+   opacity:  1;
+   text-align: center;
+   font-size: 1em;
+    font-weight: 400;
+   
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:#56450a;
+   opacity:  1;
+   text-align: center;
+   font-size: 1em;
+    font-weight: 400;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#56450a;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:#56450a;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: #000;
+  font-size: 1em;
+    font-weight: 400;
+}
+.navbar a.active {
+    background-color: #000;
+    color:#ddd; 
+}
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that stays next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+.card {
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+  .guide{
+      display: none;
+  }
+  .dateHeader {
+    background: #ddd;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+  }
+  
+  .dateContainer {
+    padding: 10px;
+  }
+
+/* Main column */
+.main {   
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+
+.control{
+
+  background-color:  #0f1715;
+  width: 100%;
+  padding: 20px;
+}
+.map{
+    width: 100%;
+    padding: 20px;
+  }
+
+.button {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgba(76, 74, 12, 0.8);
+    border-radius:1em;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:100%;
+  
+  }
+ 
+  
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #ddd;
+    margin-bottom: 0;
+  }
+  .footer .container { 
+    background: #000;
+    border: 1px solid #ddd;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+  }
+  .footer-copyright {
+    color: #666;
+  
+  }
+  .footer img{
+    border: 0.5em solid #3c484a;
+    border-radius: 5em;
+    mix-blend-mode:screen;
+    width:12%;
+   margin:0.5em 1em;;
+  }
+  .footer .row{
+      display:grid;
+      grid-template-columns: 60% 40%;
+     
+  }
+  .footer p{
+    color:#3c484a;
+  }
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+  .right{
+    display: inline;
+}
+    
+
+input {
+   
+    width: 200px;
+  
+}
+.button {
+   
+    width: 70%;
+  
+}
+
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width:100%;
+  }
+  .right{
+    display: inline;
+}
+   
+input {
+   
+    width: 200px;
+  
+}
+
+
+.button {
+   
+    width: 70%;
+  
+}
+}
