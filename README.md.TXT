@@ -1,0 +1,2 @@
+I'm Oyindamola Ogunsola and HS GEO SEARCH is a application designed to help people search for and extract information such as weather conditionslike temperature,wind speed,humidity and precipitation.
+Thanks for reading.
