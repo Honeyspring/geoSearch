@@ -1,0 +1,6 @@
+type i.e ft for feature bg for bug ,ch for chore and rf for refactor(scope i.e fan-base,logo,etc) :subject(summarize in 50 charcater ,do not end with full stop ,do not capitalize first letter and seperate it from body with a blank line)
+
+Use imperative mood in subject line that is in present tense eg Add index.html file.
+Wrap body in 72 charcter and end sentence with period,give very detailed description of commit, explain what ,how and why in the body.
+
+footer is for refrencing issuees eg[finshes #3543211 ,#3543221,#35432221 for multiple issues]
