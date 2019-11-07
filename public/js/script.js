@@ -1,4 +1,15 @@
 
+const cityForm = document.getElementById('city-form');
+const cityInput = document.getElementById('city');
+const locationForm = document.getElementById('locationForm');
+const locationInput = document.getElementById('location');
+const reportSection = document.getElementById('weatherReport');
+const pressureSection = document.getElementById('pressureResult');
+const pressure=document.getElementById("pressure")
+const humiditySection = document.getElementById('humidityResult');
+const humidity=document.getElementById("humidity")
+const windSection = document.getElementById('windResult');
+const wind=document.getElementById("wind")
 /*to change background on click*/
 const button =document.querySelectorAll('.button').forEach(function (e){
   function add(){
@@ -101,3 +112,47 @@ function initAutocomplete() {
     });
   }
   
+  
+/* 
+ * Capture and handle form submit event
+ * Prevent default behaviour, prepare and send API request
+*/
+cityForm.addEventListener('submit', ($event) => {
+    $event.preventDefault();
+    const chosenCity = cityInput.value;
+    document.getElementById("locationHeader").textContent=chosenCity;
+    apiRequest.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' + chosenCity  +'&APPID=2d0c49b28f134f4907a106fff814d7bb');
+    apiRequest.send();
+  });
+  
+  let apiRequest = new XMLHttpRequest();
+  apiRequest.onreadystatechange = () => {
+    if (apiRequest.readyState === 4) {
+      if (apiRequest.status === 404){
+        return  reportSection.textContent = 'City not found' ;
+        cityInput.style.border='thin solid red';
+        
+          }
+      
+  const response = JSON.parse(apiRequest.response); 
+   reportSection.textContent = 'The weather in ' + response.name + ' is '  + response.weather[0].description +' and a temperature '+' '+ response.main.temp +'Kelvin,click celscius button to convert to celscius and fahrenheit respectively';
+  
+        
+ pressure.addEventListener("click", pressureResult);
+function pressureResult() {
+    
+    pressureSection.textContent ='The pressure in ' + response.name + ' is '+ response.main.pressure  +'hPa.';
+}
+wind.addEventListener("click", windResult);
+function windResult() {
+    
+    windSection.textContent ='The Wind Speed in ' + response.name + ' is '+ response.wind.speed  +'meter/sec   and  a wind direction of'+ response.wind.deg+'degrees.';
+}
+humidity.addEventListener("click", humidityResult);
+function humidityResult() {
+    
+    humiditySection.textContent ='The humidity in ' + response.name + ' is '+ response.main.humidity  +'%.';
+}
+}
+    };  
+    
