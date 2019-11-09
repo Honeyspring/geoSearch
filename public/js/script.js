@@ -4,6 +4,10 @@ const cityInput = document.getElementById('city');
 const locationForm = document.getElementById('locationForm');
 const locationInput = document.getElementById('location');
 const reportSection = document.getElementById('weatherReport');
+const celsciusSection = document.getElementById('celsciusResult');
+const celscius=document.getElementById("celscius")
+const fahrenheitSection = document.getElementById('fahrenheitResult');
+const fahrenheit=document.getElementById("fahrenheit")
 const pressureSection = document.getElementById('pressureResult');
 const pressure=document.getElementById("pressure")
 const humiditySection = document.getElementById('humidityResult');
@@ -41,9 +45,10 @@ document.getElementById("date").innerHTML = 'Weather for ' + today;
 // Prepare openweathermap.org request
 var day =new Date();
 document.getElementById("day").innerHTML = day.getDate();
-//getting google map api
+
 var year= new Date();
 document.getElementById("year").innerHTML = year;
+//getting google map api
 function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -33.8688, lng: 151.2195},
@@ -54,11 +59,13 @@ function initAutocomplete() {
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
+   
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
       searchBox.setBounds(map.getBounds());
+      
     });
 
     var markers = [];
@@ -153,6 +160,21 @@ function humidityResult() {
     
     humiditySection.textContent ='The humidity in ' + response.name + ' is '+ response.main.humidity  +'%.';
 }
+
+celscius.addEventListener("click", celsciusConverter);
+function celsciusConverter() {
+  
+      
+    celsciusSection.textContent ='The temperature in ' + response.name + ' is '+( response.main.temp -273.15)  + 'celscius';
 }
+fahrenheit.addEventListener("click", fahrenheitConverter);
+function fahrenheitConverter() {
+    
+    fahrenheitSection.textContent ='The temperature in ' + response.name + ' is '+( response.main.temp -459.67)  + 'fahrenheit';
+}
+pressure.addEventListener("click", pressureResult);
+function pressureResult() {
+}
+    }
     };  
     
