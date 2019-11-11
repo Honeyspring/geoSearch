@@ -261,7 +261,7 @@ h1{
   }
 /* Footer */
 .footer {
-  padding: 20px;
+  
   text-align: center;
   background-color: #ddd;
     margin-bottom: 0;
@@ -277,7 +277,7 @@ h1{
   
   }
   .footer img{
-    border: 0.5em solid #3c484a;
+    
     border-radius: 5em;
     mix-blend-mode:screen;
     width:12%;
@@ -293,55 +293,72 @@ h1{
   }
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
+  * {
+    box-sizing: border-box;
+    width:100%;
+    
+  }
   .row {   
     flex-direction: column;
+   
   }
   .right{
     display: inline;
 }
-    
+.right .search{
+  padding: 2px;
+}  
+#city-form {
+  width: 100%;
+    display: flex;
+}
+.city input {
+   
+  width: 70%;
 
-input {
-   
-    width: 200px;
-  
 }
-.button {
-   
-    width: 70%;
-  
+ .search{
+  width: 30%;
 }
-#pac-input{
-   
-    width: 200px;
+.footer .row{
+  display:flex;
   
+ 
 }
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
+  
+* {
+  box-sizing: border-box;
+  width:100%;
+ 
+}
   .navbar a {
     float: none;
-    width:100%;
+    
   }
   .right{
     display: inline;
 }
    
-input {
-   
-    width: 200px;
-  
+#city-form {
+  width: 100%;
+    display: flex;
 }
 
-#pac-input{
-   
-    width: 200px;
-  
-}
-.button {
+.city input{
    
     width: 70%;
   
+}
+ .search{
+  width: 30%;
+}
+.footer .row{
+  display:flex;
+  
+ 
 }
 }

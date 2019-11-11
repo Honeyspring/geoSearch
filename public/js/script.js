@@ -42,12 +42,11 @@ document.getElementById('cancelButton').addEventListener('click',function view()
 
 var today = new Date();
 document.getElementById("date").innerHTML = 'Weather for ' + today;
-// Prepare openweathermap.org request
-var day =new Date();
-document.getElementById("day").innerHTML = day.getDate();
+document.getElementById("day").innerHTML = today.getDate();
+document.getElementById("year").innerHTML = today;
 
-var year= new Date();
-document.getElementById("year").innerHTML = year;
+  
+
 //getting google map api
 function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -57,8 +56,9 @@ function initAutocomplete() {
     });
 
     // Create the search box and link it to the UI element.
-    var input = document.getElementById('pac-input');
-    var searchBox = new google.maps.places.SearchBox(input);
+    var input = document.getElementById('cityInput');
+    var newinput = document.getElementById('cityInput');
+    var searchBox = new google.maps.places.SearchBox(cityInput);
    
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -73,7 +73,7 @@ function initAutocomplete() {
     // more details for that place.
     searchBox.addListener('places_changed', function() {
       var places = searchBox.getPlaces();
-
+      
       if (places.length == 0) {
         return;
       }
@@ -131,7 +131,7 @@ cityForm.addEventListener('submit', ($event) => {
     apiRequest.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' + chosenCity  +'&APPID=2d0c49b28f134f4907a106fff814d7bb');
     apiRequest.send();
   });
-  
+  // Prepare openweathermap.org request
   let apiRequest = new XMLHttpRequest();
   apiRequest.onreadystatechange = () => {
     if (apiRequest.readyState === 4) {

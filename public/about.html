@@ -32,11 +32,11 @@
    
             <div class="card">
                     <div class="dateHeader">
-                      <h1 id="day">2</h1>
+                      <h1 id="days" >1</h1>
                     </div>
                   
                     <div class="dateContainer">
-                      <p id="year"> NOV,2019</p>
+                      <p id="years"> NOV,2019</p>
                     </div>
             </div>
        
@@ -51,8 +51,11 @@
             </p>it also provides means of converting temperature of the location inputed from kelvin its default unit to celscuis and fahrenheit by clicking the celscuis or fahrenheit button . </p>
             <p> HS Geo-search was designed by Oyindamola Ogunsola a web developer who also loves fashion and art.</p>
     </div>
-    
+    <div class="map">
+      <img width="600" src="https://www.mapquestapi.com/staticmap/v4/getplacemap?key=rbAO4YLaxBjK5xUHWpzxuAMXVe6wrMqj&location=Lagos&size=600,300&type=map&zoom=13&imagetype=png&scalebar=false&showicon=green-1" alt="Map of Lagos"name="map">
+</div>
     </div>
+    
    </div>
 
 <div class="footer">
@@ -80,7 +83,13 @@
       
 </div>
 </div>
+
 <script src="js/script.js"></script>
+<script>
+var tday = new Date();
+document.getElementById("days").innerHTML = tday.getDate();
+  document.getElementById("years").innerHTML = tday;
+</script>
 
 </body>
 
