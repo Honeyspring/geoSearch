@@ -59,7 +59,7 @@ myDay();
 //getting google map api
 function initAutocomplete() {
     let map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -33.8688, lng: 151.2195},
+      center: {lat: 6.6080, lng: 3.6218},
       zoom: 13,
       mapTypeId: 'roadmap'
     });
@@ -180,7 +180,7 @@ function celsciusConverter() {
 fahrenheit.addEventListener("click", fahrenheitConverter);
 function fahrenheitConverter() {
     
-    fahrenheitSection.textContent ='The temperature in ' + response.name + ' is '+( response.main.temp -459.67)  + 'fahrenheit';
+    fahrenheitSection.textContent ='The temperature in ' + response.name + ' is '+( (response.main.temp -273.15)*9/5+32)  + 'fahrenheit';
 }
 pressure.addEventListener("click", pressureResult);
 function pressureResult() {
