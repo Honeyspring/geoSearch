@@ -31,13 +31,13 @@ const button =document.querySelectorAll('.button').forEach(function (e){
 });
 /* to add page loader*/
 function pageLoader() {
- let load = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("map").style.display = "block";
-}
+  let load = setTimeout(showPage, 3000);
+ }
+ 
+ function showPage() {
+   document.getElementById("loader").style.display = "none";
+   document.getElementById("map").style.display = "block";
+ }
 /*to hide and show guide*/
 const guided =document.getElementById('guideSection');
 document.getElementById('guideButton').addEventListener('click',function view(){
