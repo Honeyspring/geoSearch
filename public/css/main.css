@@ -72,7 +72,7 @@ h1{
     text-align: center;
     text-decoration: none;
     color:#fff;
-    background: #56450a;;
+    background: #56450a;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -141,6 +141,7 @@ h1{
   .guide{
       display: none;
   }
+ 
   .dateHeader {
     background: #ddd;
     color: white;
@@ -157,6 +158,55 @@ h1{
   flex: 70%;
   background-color: white;
   padding: 20px;
+  
+}
+
+/*pageloader: Center the loader */
+#loader {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: 5px 0 0 -75px;
+  border: 6px solid #f1f1f1;
+  border-radius: 50%;
+  border-top: 6px solid #56450a;
+  border-left: 6px solid #000;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
 }
 
 
@@ -169,6 +219,7 @@ h1{
 .map{
     width: 100%;
     padding: 20px;
+
   }
 
 .button {
@@ -190,7 +241,7 @@ h1{
   #map {
   
    height:600px;
-
+  display:none; 
   }
   /* Makes the map fill the window. */
   

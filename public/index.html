@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"  href ="css/main.css" >
 </head>
-<body>
+<body onload="pageLoader()">
 
 <div class="header">
         <img src="images/icons/Hs.png" alt="HS logo" id="logo">
@@ -63,7 +63,7 @@
        
    
   </div><!--side-->
-
+ 
   <div class="main">
     <h2 id="locationHeader" >Lagos,Nigeria</h2>
     <h5 id="date">Weather for, NOV 1st, 2019</h5>
@@ -82,7 +82,7 @@
             the weather reports appears on the main page ,right on top and above the buttons :'temperature in Cescuis','wind speed',etc.</p>
             <p>you can convert temperature to celscuis or fahrenheit by clicking either buttons with the label on it,this would only display result when you have entered a location in the search box on the top navigation bar, the wind speed,humidity nd pessure works the same way.</p>
             </div>
-            <button class="button " id="cancelButton"> Close Guide</button>
+          
     </div>
    
     <p id="pressureResult"></p>
@@ -95,7 +95,7 @@
     
     <h2>MAP</h2>
     
-    
+    <div id="loader"></div>
     <div id="map"></div>
  <br>
     </div>

@@ -1,4 +1,3 @@
-
 const cityForm = document.getElementById('city-form');
 const cityInput = document.getElementById('city');
 const locationForm = document.getElementById('locationForm');
@@ -15,50 +14,60 @@ const humidity=document.getElementById("humidity")
 const windSection = document.getElementById('windResult');
 const wind=document.getElementById("wind")
 /*to change background on click*/
-const button =document.querySelectorAll('.button').forEach(function (e){
-  function add(){
-   this.style.backgroundColor=' grey';
-  }
-  function remove(){
-    this.style.backgroundColor=' white';
-   }
-  e.addEventListener('click', add);
- 
- e.addEventListener('blur', remove);
-   
-});
 
+const button =document.querySelectorAll('.button').forEach(function (e){
+ 
+    function add(){
+        this.style.backgroundColor=' grey';
+     }
+     
+  function remove(){
+    this.style.backgroundColor=' white'; 
+   }
+  
+  e.addEventListener('click', add);
+ e.addEventListener('blur', remove);
+
+});
+/* to add page loader*/
+function pageLoader() {
+ let load = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("map").style.display = "block";
+}
 /*to hide and show guide*/
 const guided =document.getElementById('guideSection');
 document.getElementById('guideButton').addEventListener('click',function view(){
-    guided.classList.remove('guide');
+    guided.classList.toggle('guide');
   
 });
-document.getElementById('cancelButton').addEventListener('click',function view(){
-  guided.classList.add('guide');
 
-});
 /*to add date onload*/
 
-var today = new Date();
-document.getElementById("date").innerHTML = 'Weather for ' + today;
-document.getElementById("day").innerHTML = today.getDate();
-document.getElementById("year").innerHTML = today;
 
-  
-
+  function myDay(){
+    let today = new Date();
+    document.getElementById("date").textContent= 'Weather for ' + today;
+    document.getElementById("day").textContent= today.getDate();
+    document.getElementById("year").textContent= today;
+    return today;
+  }
+myDay();
 //getting google map api
 function initAutocomplete() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    let map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -33.8688, lng: 151.2195},
       zoom: 13,
       mapTypeId: 'roadmap'
     });
 
     // Create the search box and link it to the UI element.
-    var input = document.getElementById('cityInput');
-    var newinput = document.getElementById('cityInput');
-    var searchBox = new google.maps.places.SearchBox(cityInput);
+    let input = document.getElementById('cityInput');
+    let newinput = document.getElementById('cityInput');
+    let searchBox = new google.maps.places.SearchBox(cityInput);
    
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -68,11 +77,11 @@ function initAutocomplete() {
       
     });
 
-    var markers = [];
+    let markers = [];
     // Listen for the event fired when the user selects a prediction and retrieve
     // more details for that place.
     searchBox.addListener('places_changed', function() {
-      var places = searchBox.getPlaces();
+      let places = searchBox.getPlaces();
       
       if (places.length == 0) {
         return;
@@ -85,14 +94,14 @@ function initAutocomplete() {
       markers = [];
 
       // For each place, get the icon, name and location.
-      var bounds = new google.maps.LatLngBounds();
+      let bounds = new google.maps.LatLngBounds();
       places.forEach(function(place) {
         if (!place.geometry) {
             mapSection.textContent="Returned place contains no geometry";
           //console.log("Returned place contains no geometry");
           return;
         }
-        var icon = {
+        let icon = {
           url: place.icon,
           size: new google.maps.Size(71, 71),
           origin: new google.maps.Point(0, 0),
@@ -135,9 +144,10 @@ cityForm.addEventListener('submit', ($event) => {
   let apiRequest = new XMLHttpRequest();
   apiRequest.onreadystatechange = () => {
     if (apiRequest.readyState === 4) {
-      if (apiRequest.status === 404){
-        return  reportSection.textContent = 'City not found' ;
+      if (apiRequest.status === 404 ){
         cityInput.style.border='thin solid red';
+        return  reportSection.textContent = 'City not found' ;
+        
         
           }
       
