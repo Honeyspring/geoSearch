@@ -4,40 +4,38 @@ const locationForm = document.getElementById('locationForm');
 const locationInput = document.getElementById('location');
 const reportSection = document.getElementById('weatherReport');
 const celsciusSection = document.getElementById('celsciusResult');
-const celscius=document.getElementById("celscius")
+const celscius=document.getElementById("celscius");
 const fahrenheitSection = document.getElementById('fahrenheitResult');
-const fahrenheit=document.getElementById("fahrenheit")
+const fahrenheit=document.getElementById("fahrenheit");
 const pressureSection = document.getElementById('pressureResult');
-const pressure=document.getElementById("pressure")
+const pressure=document.getElementById("pressure");
 const humiditySection = document.getElementById('humidityResult');
-const humidity=document.getElementById("humidity")
+const humidity=document.getElementById("humidity");
 const windSection = document.getElementById('windResult');
-const wind=document.getElementById("wind")
+const wind=document.getElementById("wind");
 /*to change background on click*/
 
 const button =document.querySelectorAll('.button').forEach(function (e){
  
-    function add(){
-        this.style.backgroundColor=' grey';
-     }
+   const add=()=> this.style.backgroundColor=' grey';
+    
      
-  function remove(){
-    this.style.backgroundColor=' white'; 
-   }
+ const remove=()=> this.style.backgroundColor=' white'; 
+   
   
   e.addEventListener('click', add);
  e.addEventListener('blur', remove);
 
 });
 /* to add page loader*/
-function pageLoader() {
-  let load = setTimeout(showPage, 3000);
- }
+const showPage =() => {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("map").style.display = "block";
+};
+const pageLoader =()=> { let load = setTimeout(showPage, 3000);};
  
- function showPage() {
-   document.getElementById("loader").style.display = "none";
-   document.getElementById("map").style.display = "block";
- }
+ 
+
 /*to hide and show guide*/
 const guided =document.getElementById('guideSection');
 document.getElementById('guideButton').addEventListener('click',function view(){
@@ -48,16 +46,16 @@ document.getElementById('guideButton').addEventListener('click',function view(){
 /*to add date onload*/
 
 
-  function myDay(){
+ const myDay=()=>{
     let today = new Date();
     document.getElementById("date").textContent= 'Weather for ' + today;
     document.getElementById("day").textContent= today.getDate();
     document.getElementById("year").textContent= today;
     return today;
-  }
+  };
 myDay();
 //getting google map api
-function initAutocomplete() {
+const initAutocomplete=()=> {
     let map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 6.6080, lng: 3.6218},
       zoom: 13,
@@ -126,7 +124,7 @@ function initAutocomplete() {
       });
       map.fitBounds(bounds);
     });
-  }
+  };
   
   
 /* 
@@ -147,44 +145,23 @@ cityForm.addEventListener('submit', ($event) => {
       if (apiRequest.status === 404 ){
         cityInput.style.border='thin solid red';
         return  reportSection.textContent = 'City not found' ;
-        
-        
           }
-      
   const response = JSON.parse(apiRequest.response); 
    reportSection.textContent = 'The weather in ' + response.name + ' is '  + response.weather[0].description +' and a temperature '+' '+ response.main.temp +'Kelvin,click celscius button to convert to celscius and fahrenheit respectively';
   
-        
- pressure.addEventListener("click", pressureResult);
-function pressureResult() {
-    
-    pressureSection.textContent ='The pressure in ' + response.name + ' is '+ response.main.pressure  +'hPa.';
-}
-wind.addEventListener("click", windResult);
-function windResult() {
-    
-    windSection.textContent ='The Wind Speed in ' + response.name + ' is '+ response.wind.speed  +'meter/sec   and  a wind direction of'+ response.wind.deg+'degrees.';
-}
-humidity.addEventListener("click", humidityResult);
-function humidityResult() {
-    
-    humiditySection.textContent ='The humidity in ' + response.name + ' is '+ response.main.humidity  +'%.';
-}
+  const pressureResult =()=> pressureSection.textContent ='The pressure in ' + response.name + ' is '+ response.main.pressure  +'hPa.';
+    pressure.addEventListener("click", pressureResult);
+const windResult=() =>  windSection.textContent ='The Wind Speed in ' + response.name + ' is '+ response.wind.speed  +'meter/sec   and  a wind direction of'+ response.wind.deg+'degrees.';
+    wind.addEventListener("click", windResult);
+const humidityResult =()=> humiditySection.textContent ='The humidity in ' + response.name + ' is '+ response.main.humidity  +'%.';
+  humidity.addEventListener("click", humidityResult);
 
-celscius.addEventListener("click", celsciusConverter);
-function celsciusConverter() {
-  
-      
-    celsciusSection.textContent ='The temperature in ' + response.name + ' is '+( response.main.temp -273.15)  + 'celscius';
-}
+const celsciusConverter =()=> celsciusSection.textContent ='The temperature in ' + response.name + ' is '+( response.main.temp -273.15)  + 'celscius';
+    celscius.addEventListener("click", celsciusConverter);
+const fahrenheitConverter =() =>fahrenheitSection.textContent ='The temperature in ' + response.name + ' is '+( (response.main.temp -273.15)*9/5+32)  + 'fahrenheit';
+
 fahrenheit.addEventListener("click", fahrenheitConverter);
-function fahrenheitConverter() {
-    
-    fahrenheitSection.textContent ='The temperature in ' + response.name + ' is '+( (response.main.temp -273.15)*9/5+32)  + 'fahrenheit';
-}
-pressure.addEventListener("click", pressureResult);
-function pressureResult() {
-}
+
     }
     };  
     

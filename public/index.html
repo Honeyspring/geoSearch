@@ -8,7 +8,8 @@
 <link rel="stylesheet"  href ="css/main.css" >
 </head>
 <body onload="pageLoader()">
-
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
 <div class="header">
         <img src="images/icons/Hs.png" alt="HS logo" id="logo">
   <h1>HS GEO SEARCH</h1>
@@ -45,7 +46,9 @@
             <button class="button " id="wind">WIND SPEED</button>
             <button class="button " id="humidity">HUMIDITY</button>
             <button class="button " id="pressure">PRESSURE</button>
-            <button class="button ">SHARE</button>
+            <button class="button fb-share-button" data-href="git+https://github.com/Honeyspring/geoSearch.git" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse" >SHARE </a>
+            </a></button>
+            
       </div>      
    
       <br>
