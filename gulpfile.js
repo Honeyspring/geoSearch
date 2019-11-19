@@ -6,7 +6,7 @@ const browserSync = require('browser-sync').create();
 
 gulp.task('processHTML', (done) => {
     done();
-    gulp.src('public/index.html')
+    gulp.src('public/*.html')
         .pipe(gulp.dest('dist'));
 });
 gulp.task('processCSS', (done) => {
