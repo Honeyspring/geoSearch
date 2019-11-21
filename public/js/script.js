@@ -13,6 +13,8 @@ const humiditySection = document.getElementById('humidityResult');
 const humidity=document.getElementById("humidity");
 const windSection = document.getElementById('windResult');
 const wind=document.getElementById("wind");
+
+
 /*to change background on click*/
 
 const button =document.querySelectorAll('.button').forEach(function (e){
@@ -32,7 +34,7 @@ const showPage =() => {
   document.getElementById("loader").style.display = "none";
   document.getElementById("map").style.display = "block";
 };
-const pageLoader =()=> { let load = setTimeout(showPage, 3000);};
+const pageLoader =()=> { let load = setTimeout(showPage, 3000);}
  
  
 
