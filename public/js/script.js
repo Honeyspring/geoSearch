@@ -19,10 +19,10 @@ const wind=document.getElementById("wind");
 
 const button =document.querySelectorAll('.button').forEach(function (e){
  
-   const add=()=> this.style.backgroundColor=' grey';
+  function add(){this.style.backgroundColor='grey';}
     
      
- const remove=()=> this.style.backgroundColor=' white'; 
+function remove(){this.style.backgroundColor=' white';} 
    
   
   e.addEventListener('click', add);
@@ -57,7 +57,7 @@ document.getElementById('guideButton').addEventListener('click',function view(){
   };
 myDay();
 //getting google map api
-const initAutocomplete=()=> {
+function initAutocomplete() {
     let map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 6.6080, lng: 3.6218},
       zoom: 13,

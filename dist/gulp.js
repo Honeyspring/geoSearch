@@ -1,1 +1,0 @@
-"use strict";var gulp=require("gulp"),babel=require("gulp-babel"),jshint=require("gulp-jshint"),browser=require("browser-sync").create();gulp.task("htmlTask",function(e){e(),gulp.src("public/index.html").pipe(gulp.dest("assets"))});
