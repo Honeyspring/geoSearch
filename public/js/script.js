@@ -14,19 +14,21 @@ const humidity=document.getElementById("humidity");
 const windSection = document.getElementById('windResult');
 const wind=document.getElementById("wind");
 /*to change background on click*/
-
 const button =document.querySelectorAll('.button').forEach(function (e){
  
-   const add=()=> this.style.backgroundColor=' grey';
-    
-     
- const remove=()=> this.style.backgroundColor=' white'; 
+  function add(){
+      this.style.backgroundColor=' grey';
+   }
    
-  
-  e.addEventListener('click', add);
- e.addEventListener('blur', remove);
+function remove(){
+  this.style.backgroundColor=' white'; 
+ }
+
+e.addEventListener('click', add);
+e.addEventListener('blur', remove);
 
 });
+
 /* to add page loader*/
 const showPage =() => {
   document.getElementById("loader").style.display = "none";
@@ -55,7 +57,7 @@ document.getElementById('guideButton').addEventListener('click',function view(){
   };
 myDay();
 //getting google map api
-const initAutocomplete=()=> {
+function initAutocomplete(){
     let map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 6.6080, lng: 3.6218},
       zoom: 13,
