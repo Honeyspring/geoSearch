@@ -27,7 +27,7 @@ Versioning
 this is the first so for version see the tags on this repository.
 
 Author
-Ogunsola Oyindamolat.
+Ogunsola Oyindamola.
 
 
 Acknowledgments
