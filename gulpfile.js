@@ -1,5 +1,4 @@
-const gulp = require('gulp')
-plumber = require('gulp-plumber');
+const gulp = require('gulp');
 const jshint = require('gulp-jshint');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
