@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const jshint = require('gulp-jshint');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const autoprefixer= require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
 gulp.task('processHTML', (done) => {
@@ -9,10 +10,14 @@ gulp.task('processHTML', (done) => {
     gulp.src('public/*.html')
         .pipe(gulp.dest('dist'));
 });
+
 gulp.task('processCSS', (done) => {
     done();
     gulp.src('public/css/main.css')
+    .pipe(autoprefixer({cascade:false}))
         .pipe(gulp.dest('dist/css/'));
+         
+
 });
 gulp.task('processIMG', (done) => {
     done();
@@ -53,6 +58,7 @@ gulp.task('browserSync', () => {
 
     gulp.watch('dist/*.js').on('change',browserSync.reload);
     gulp.watch('dist/*.html').on('change',browserSync.reload);
+    gulp.watch('dist/*.css').on('change',browserSync.reload);
   });
 
   gulp.task('default', gulp.series('processHTML','processCSS','processJS','processIMG','babelPolyfill','browserSync',(callback) => {

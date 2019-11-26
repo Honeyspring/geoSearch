@@ -30,8 +30,10 @@
 </div>
 
 <div class="row">
-       
-  <div class="side">
+      <div id="toggle">
+        <img src="images/icons/menu.png">
+      </div> 
+  <div class="side" id="sideNav">
     <h2>Weather Now</h2>
     <h5>Get Weather Info:</h5>
     <p id="pressureResult"></p>
@@ -39,14 +41,13 @@
     <p id="humidityResult"></p>
     <p id="celsciusResult"></p>
     <p id="fahrenheitResult"></p>
-    <p id="weatherReport" ></p>
     <div class="control">
             <button class="button " id="celscius" >TEMPERATURE IN CELSCIUS</button>
             <button class="button" id="fahrenheit" >TEMPERATURE IN FARRENHEIT</button>
             <button class="button " id="wind">WIND SPEED</button>
             <button class="button " id="humidity">HUMIDITY</button>
             <button class="button " id="pressure">PRESSURE</button>
-            <button class="button " data-href="https://honeyspring.github.io/geoSearch/dist/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse" >SHARE </a>
+            <button class="button " data-href="https://github.com/Honeyspring/geoSearch.git/dist" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse" >SHARE </a>
             </a></button>
             
       </div>      
@@ -69,7 +70,7 @@
  
   <div class="main">
     <h2 id="locationHeader" >Lagos,Nigeria</h2>
-    <h5 id="date">Weather for, NOV 1st, 2019</h5>
+    <h5 id="date">Weather for, NOV 1st, 2019</h5> <p id="weatherReport" ></p>
     <button class="button " id="guideButton"> Quick Guide</button>
    
     <div class="guide card" id="guideSection" >
@@ -83,7 +84,7 @@
               <p>in order to check for weather report scroll to to top navigation bar where 'Home','ABOUT' and a search button appears<br/>
             input your text in the text area just beside the search button and click 'search'<br/>
             the weather reports appears on the main page ,right on top and above the buttons :'temperature in Cescuis','wind speed',etc.</p>
-            <p>you can convert temperature to celscuis or fahrenheit by clicking either buttons with the label on it,this would only display result when you have entered a location in the search box on the top navigation bar, the wind speed,humidity and pessure works the same way.</p>
+            <p>you can convert temperature to celscuis or fahrenheit by clicking either buttons with the label on it,this would only display result when you have entered a location in the search box on the top navigation bar, the wind speed,humidity nd pessure works the same way.</p>
             </div>
           
     </div>

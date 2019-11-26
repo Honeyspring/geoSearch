@@ -13,28 +13,35 @@ const humiditySection = document.getElementById('humidityResult');
 const humidity=document.getElementById("humidity");
 const windSection = document.getElementById('windResult');
 const wind=document.getElementById("wind");
+const sideButton=document.getElementById('toggle');
 
-
+/*toggle side nav for small screens*/
+const show =sideButton.addEventListener('click',()=>{
+ const sideNav =document.getElementById('sideNav');
+return sideNav.classList.toggle('side');
+});
 /*to change background on click*/
-
 const button =document.querySelectorAll('.button').forEach(function (e){
  
-  function add(){this.style.backgroundColor='grey';}
-    
-     
-function remove(){this.style.backgroundColor=' white';} 
+  function add(){
+      this.style.backgroundColor=' grey';
+   }
    
-  
-  e.addEventListener('click', add);
- e.addEventListener('blur', remove);
+function remove(){
+  this.style.backgroundColor=' white'; 
+ }
+
+e.addEventListener('click', add);
+e.addEventListener('blur', remove);
 
 });
+
 /* to add page loader*/
 const showPage =() => {
   document.getElementById("loader").style.display = "none";
   document.getElementById("map").style.display = "block";
 };
-const pageLoader =()=> { let load = setTimeout(showPage, 3000);}
+const pageLoader =()=> { let load = setTimeout(showPage, 3000);};
  
  
 
@@ -46,8 +53,6 @@ document.getElementById('guideButton').addEventListener('click',function view(){
 });
 
 /*to add date onload*/
-
-
  const myDay=()=>{
     let today = new Date();
     document.getElementById("date").textContent= 'Weather for ' + today;
@@ -57,7 +62,7 @@ document.getElementById('guideButton').addEventListener('click',function view(){
   };
 myDay();
 //getting google map api
-function initAutocomplete() {
+function initAutocomplete(){
     let map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 6.6080, lng: 3.6218},
       zoom: 13,
@@ -126,7 +131,7 @@ function initAutocomplete() {
       });
       map.fitBounds(bounds);
     });
-  };
+  }
   
   
 /* 
@@ -146,7 +151,7 @@ cityForm.addEventListener('submit', ($event) => {
     if (apiRequest.readyState === 4) {
       if (apiRequest.status === 404 ){
         cityInput.style.border='thin solid red';
-        return  reportSection.textContent = 'City not found' ;
+        return  reportSection.textContent ='City not found' ;
           }
   const response = JSON.parse(apiRequest.response); 
    reportSection.textContent = 'The weather in ' + response.name + ' is '  + response.weather[0].description +' and a temperature '+' '+ response.main.temp +'Kelvin,click celscius button to convert to celscius and fahrenheit respectively';
