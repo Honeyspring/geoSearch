@@ -13,6 +13,13 @@ const humiditySection = document.getElementById('humidityResult');
 const humidity=document.getElementById("humidity");
 const windSection = document.getElementById('windResult');
 const wind=document.getElementById("wind");
+const sideButton=document.getElementById('toggle')
+
+/*toggle side nav for small screens*/
+const show =sideButton.addEventListener('click',()=>{
+ const sideNav =document.getElementById('sideNav');
+return sideNav.classList.toggle('side');
+});
 /*to change background on click*/
 const button =document.querySelectorAll('.button').forEach(function (e){
  
@@ -46,8 +53,6 @@ document.getElementById('guideButton').addEventListener('click',function view(){
 });
 
 /*to add date onload*/
-
-
  const myDay=()=>{
     let today = new Date();
     document.getElementById("date").textContent= 'Weather for ' + today;

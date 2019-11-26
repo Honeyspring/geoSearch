@@ -47,6 +47,13 @@ h1{
   padding: 14px 20px;
   text-decoration: none;
 }
+#toggle img{
+    width:12%;
+   margin:0.5em 1em;;
+  }
+#toggle{
+  display:none;
+}
 
 /* Right-aligned link */
 .right{
@@ -243,7 +250,7 @@ h1{
   }
  
   #map {
-  
+
    height:600px;
   display:none; 
   }
@@ -353,10 +360,17 @@ h1{
     width:100%;
     
   }
+
   
   .row {   
     flex-direction: column;
    
+  }
+  #toggle{
+    display:block;
+  }
+  .side{
+    display:none;
   }
   .right{
     display: inline;
@@ -394,6 +408,12 @@ h1{
   .navbar a {
     float: none;
     
+  }
+  #toggle{
+    display:block;
+  }
+  .side{
+    display:none;
   }
   .right{
     display: inline;

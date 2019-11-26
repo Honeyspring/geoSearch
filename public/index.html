@@ -30,8 +30,10 @@
 </div>
 
 <div class="row">
-       
-  <div class="side">
+      <div id="toggle">
+        <img src="images/icons/menu.png">
+      </div> 
+  <div class="side" id="sideNav">
     <h2>Weather Now</h2>
     <h5>Get Weather Info:</h5>
     <p id="pressureResult"></p>
@@ -39,7 +41,6 @@
     <p id="humidityResult"></p>
     <p id="celsciusResult"></p>
     <p id="fahrenheitResult"></p>
-    <p id="weatherReport" ></p>
     <div class="control">
             <button class="button " id="celscius" >TEMPERATURE IN CELSCIUS</button>
             <button class="button" id="fahrenheit" >TEMPERATURE IN FARRENHEIT</button>
@@ -69,7 +70,7 @@
  
   <div class="main">
     <h2 id="locationHeader" >Lagos,Nigeria</h2>
-    <h5 id="date">Weather for, NOV 1st, 2019</h5>
+    <h5 id="date">Weather for, NOV 1st, 2019</h5> <p id="weatherReport" ></p>
     <button class="button " id="guideButton"> Quick Guide</button>
    
     <div class="guide card" id="guideSection" >
